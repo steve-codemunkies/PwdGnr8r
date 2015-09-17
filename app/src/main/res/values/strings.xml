@@ -3,4 +3,19 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="pref_password_length_title">Password length</string>
+    <string name="pref_password_length_password_length_title">Password length</string>
+    <string name="pref_password_length_password_length_summary">%d characters</string>
+
+    <string name="pref_complexity_title">Complexity</string>
+    <string name="pref_complexity_upper_case_title">Upper case</string>
+    <string name="pref_complexity_upper_case_summary">Use upper case letters (e.g. A, B, C, ...) in the password</string>
+    <string name="pref_complexity_lower_case_title">Lower case</string>
+    <string name="pref_complexity_lower_case_summary">Use lower case letters (e.g. a, b, c, ...) in the password</string>
+    <string name="pref_complexity_number_title">Numbers</string>
+    <string name="pref_complexity_number_summary">Use numbers (e.g. 1, 2, 3, ...) in the password</string>
+    <string name="pref_complexity_special_characters_title">Special characters</string>
+    <string name="pref_complexity_special_characters_summary">Use special characters (e.g. !, ?, £, ...) in the password</string>
+    <string name="title_activity_settings">PwdGnr8r Settings</string>
 </resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_password_length_title"
+        android:key="pref_password_length_settings">
+        <EditTextPreference android:key="pref_password_length_settings_length_setting"
+            android:title="@string/pref_password_length_password_length_title"
+            android:summary="@string/pref_password_length_password_length_summary"
+            android:defaultValue="12" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_complexity_title">
+        <CheckBoxPreference android:key="pref_complexity_upper_case"
+            android:title="@string/pref_complexity_upper_case_title"
+            android:summary="@string/pref_complexity_upper_case_summary"
+            android:defaultValue="true" />
+        <CheckBoxPreference android:key="pref_complexity_lower_case"
+            android:title="@string/pref_complexity_lower_case_title"
+            android:summary="@string/pref_complexity_lower_case_summary"
+            android:defaultValue="true" />
+        <CheckBoxPreference android:key="pref_complexity_number"
+            android:title="@string/pref_complexity_number_title"
+            android:summary="@string/pref_complexity_number_summary"
+            android:defaultValue="true" />
+        <CheckBoxPreference android:key="pref_complexity_special_characters"
+            android:title="@string/pref_complexity_special_characters_title"
+            android:summary="@string/pref_complexity_special_characters_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+</PreferenceScreen>
