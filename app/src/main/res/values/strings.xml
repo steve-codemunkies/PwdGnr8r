@@ -6,7 +6,7 @@
 
     <string name="pref_password_length_title">Password length</string>
     <string name="pref_password_length_password_length_title">Password length</string>
-    <string name="pref_password_length_password_length_summary">%d characters</string>
+    <string name="pref_password_length_password_length_summary">Create passwords with %d characters</string>
 
     <string name="pref_complexity_title">Complexity</string>
     <string name="pref_complexity_upper_case_title">Upper case</string>

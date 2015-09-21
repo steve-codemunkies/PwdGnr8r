@@ -1,12 +1,21 @@
 package es.codemunki.pwdgnr8r;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class SettingsActivity extends AppCompatActivity {
+    public static Intent start(final Activity activity) {
+        return new Intent(activity, SettingsActivity.class);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +49,35 @@ public class SettingsActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public static class SettingsFragment extends PreferenceFragment {
+    public static class SettingsFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
+        private Preference mPasswordLengthSetting;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.preferences);
+
+            mPasswordLengthSetting = findPreference("pref_password_length_settings_length_setting");
+
+            final SharedPreferences sharedPreferences = getPreferenceManager().getSharedPreferences();
+            sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+            final int passwordLength = sharedPreferences.getInt("pref_password_length_settings_length_setting", 12);
+            setPasswordLengthSummary(passwordLength);
+        }
+
+        private void setPasswordLengthSummary(int length) {
+            String summary = getResources().getString(R.string.pref_password_length_password_length_summary, length);
+            mPasswordLengthSetting.setSummary(summary);
+        }
+
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            if(key.equals(mPasswordLengthSetting.getKey())) {
+                final int passwordLength = sharedPreferences.getInt("pref_password_length_settings_length_setting", 12);
+                setPasswordLengthSummary(passwordLength);
+            }
         }
     }
 }

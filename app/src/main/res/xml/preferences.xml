@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/pref_password_length_title"
-        android:key="pref_password_length_settings">
-        <EditTextPreference android:key="pref_password_length_settings_length_setting"
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:numberpicker="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/pref_password_length_title">
+        <com.vanniktech.vntnumberpickerpreference.VNTNumberPickerPreference
+            android:defaultValue="12"
+            android:key="pref_password_length_settings_length_setting"
             android:title="@string/pref_password_length_password_length_title"
             android:summary="@string/pref_password_length_password_length_summary"
-            android:defaultValue="12" />
+            numberpicker:vnt_maxValue="30"
+            numberpicker:vnt_minValue="8"
+            numberpicker:vnt_setWrapSelectorWheel="true"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_complexity_title">
